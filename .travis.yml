@@ -13,7 +13,7 @@ deploy:
   - provider: s3
     access_key_id: AKIAIT4X4NDGM2WVL6VA
     secret_access_key:
-      secure: DAOcqcwrtxo5CoTGp5E6A8zODrmAdSpipNx7ZcNMeB2VTMJ1hyDG/p1R9fO8kgFPMUcg1NqXcjKPt0RGgYeQwxguJhz2vk5Do+cadT3SIO7+nQHSfs0D+Yc6vu2bucXptuSczIE4kRSb9PTHAiO3QNmuERqX8n4Hvm8Lp7bg9uI=
+      secure: fcrrjAYLD9B8xpr2obD67u8YSDl8Q/u0olYD/4fmTLUhKioM6Lh4Ivf77+N40RDUrriHw2Nuvtn7/IgM8QWxJYRnXZb5qgSgbpwt8joIoFtXvgjyahtnFp8UdrkOfvpxi6A9iU/7KL2Jm4gulLrgrEVkq0TR/k2HCnF0n/RKeZU=
     bucket: gateblu
     region: us-west-2
     skip_cleanup: true
