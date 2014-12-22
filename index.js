@@ -32,8 +32,6 @@ function Plugin(){
 util.inherits(Plugin, EventEmitter);
 
 Plugin.prototype.onMessage = function(message){
-  var payload = message.payload;
-  this.emit('message', {devices: ['*'], topic: 'echo', payload: payload});
 };
 
 Plugin.prototype.onConfig = function(device){
@@ -57,7 +55,7 @@ Plugin.prototype.setOptions = function(options){
     heartRate.on('read', function(data){
       var rate = parseHeartRate(data);
       debug('heartRate', rate);
-      self.emit('message', {heartRate: rate, devices: '*'});
+      self.emit('data', {heartRate: rate});
     });
   });
 };
