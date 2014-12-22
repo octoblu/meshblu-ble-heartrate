@@ -9,6 +9,7 @@ before_deploy:
 - mkdir deploy
 - node_modules/.bin/browserify -s Connector connector.js > deploy/meshblu-tickr.js
 deploy:
+  matrix:
   - provider: s3
     access_key_id: AKIAIT4X4NDGM2WVL6VA
     secret_access_key:
@@ -21,13 +22,12 @@ deploy:
     on:
       tags: true
       all_branches: true
-
   - provider: npm
     skip_cleanup: true
     clean_up: false
     email: roy.v.water@gmail.com
     api_key:
-      secure: lnKMeT3nTYUzffmRWYVDLzItF4NLBE5H/3Uej574cgG1hRJQhzAKuWyGVsIJcbUqfUVelRMwCAe9NGPTCE6x5Y+6V60tIrz06O6vCIl3TMgLNfJ8mezXCNvZXSE+qosjqXu4QHODt1/F79Xy50RUO0aD/PiZ6dq6MegpKOR2+qM=
+      secure: RRJKRKFC9JIvdxbkDKrdUPDwmPQc5SzfguQEDdopykTxRoDG4FQKdVnFSGzsoqyHxFDZmNZNrtem54C1bWFUhFSmYR9EZow9hzM+wrtrVFS3FpdL94AnZo+nweOCCfShccg+z50D7Bw8pFxbul9ui/lSqHZepRWCVaNkK2ueeC0=
     on:
       tags: true
       all_branches: true
