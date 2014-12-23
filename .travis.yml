@@ -1,13 +1,6 @@
 language: node_js
 node_js:
 - '0.10'
-before_install:
-- sudo apt-get update -qq
-- sudo apt-get install -qq libbluetooth-dev
-before_deploy:
-- npm install ws browserify
-- mkdir deploy
-- node_modules/.bin/browserify -s Connector connector.js > deploy/meshblu-tickr.js
 deploy:
   matrix:
   - provider: s3
@@ -31,3 +24,10 @@ deploy:
     on:
       tags: true
       all_branches: true
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq libbluetooth-dev
+before_deploy:
+  - npm install ws browserify
+  - mkdir deploy
+  - node_modules/.bin/browserify -s Connector connector.js > deploy/meshblu-tickr.js
