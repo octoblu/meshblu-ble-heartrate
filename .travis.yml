@@ -2,7 +2,6 @@ language: node_js
 node_js:
 - '0.10'
 deploy:
-  matrix:
   - provider: s3
     access_key_id: AKIAIT4X4NDGM2WVL6VA
     secret_access_key:
