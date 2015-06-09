@@ -1,6 +1,6 @@
 {
-  "name": "meshblu-tickr",
-  "version": "2.0.0",
+  "name": "meshblu-ble-heartrate",
+  "version": "1.0.0",
   "scripts": {
     "start": "node command.js"
   },

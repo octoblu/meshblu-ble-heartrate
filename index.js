@@ -7,6 +7,7 @@ var _            = require('lodash');
 var debug        = require('debug')('meshblu-tickr:index');
 var parseHeartRate = require('./parse-heart-rate');
 
+
 var MESSAGE_SCHEMA = {
   type: 'object',
   properties: {}

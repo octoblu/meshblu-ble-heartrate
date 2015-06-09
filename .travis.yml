@@ -7,17 +7,17 @@ before_install:
   - sudo apt-get install -qq libbluetooth-dev
 before_deploy:
   - npm install ws browserify coffeeify
-  - mkdir -p deploy/meshblu-tickr/latest
-  - mkdir -p deploy/meshblu-tickr/$TRAVIS_TAG
-  - node_modules/.bin/browserify -s Connector connector.js > deploy/meshblu-tickr/latest/meshblu-tickr.js
-  - gzip deploy/meshblu-tickr/latest/meshblu-tickr.js
-  - mv deploy/meshblu-tickr/latest/meshblu-tickr.js.gz deploy/meshblu-tickr/latest/meshblu-tickr.js
-  - cp deploy/meshblu-tickr/latest/meshblu-tickr.js deploy/meshblu-tickr/$TRAVIS_TAG/meshblu-tickr.js
+  - mkdir -p deploy/meshblu-ble-heartrate/latest
+  - mkdir -p deploy/meshblu-ble-heartrate/$TRAVIS_TAG
+  - node_modules/.bin/browserify -s Connector connector.js > deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
+  - gzip deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
+  - mv deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js.gz deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
+  - cp deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js deploy/meshblu-ble-heartrate/$TRAVIS_TAG/meshblu-ble-heartrate.js
 deploy:
   - provider: s3
     access_key_id: AKIAIT4X4NDGM2WVL6VA
     secret_access_key:
-      secure: fcrrjAYLD9B8xpr2obD67u8YSDl8Q/u0olYD/4fmTLUhKioM6Lh4Ivf77+N40RDUrriHw2Nuvtn7/IgM8QWxJYRnXZb5qgSgbpwt8joIoFtXvgjyahtnFp8UdrkOfvpxi6A9iU/7KL2Jm4gulLrgrEVkq0TR/k2HCnF0n/RKeZU=
+      secure: "f9/kr1VnllDk2VDAeuKt/4PGmw01qi74LPyZkN80VJoU3aIi4dF+ZbXKX00TTJ89MpSMvWdycPpkasRcPDRs58FGtJSFJb4VwJa/tmh/AyfEsRgI/RdpTbt/HMx64km0F/asgktGrE5kdY/FfVkKubqPaZPPpMFFYm/M48mU9ak="
     bucket: octoblu-cdn
     region: us-west-2
     skip_cleanup: true
@@ -30,9 +30,9 @@ deploy:
   - provider: npm
     skip_cleanup: true
     clean_up: false
-    email: roy.v.water@gmail.com
+    email: serveradmin@octoblu.com
     api_key:
-      secure: RRJKRKFC9JIvdxbkDKrdUPDwmPQc5SzfguQEDdopykTxRoDG4FQKdVnFSGzsoqyHxFDZmNZNrtem54C1bWFUhFSmYR9EZow9hzM+wrtrVFS3FpdL94AnZo+nweOCCfShccg+z50D7Bw8pFxbul9ui/lSqHZepRWCVaNkK2ueeC0=
+      secure: "TUEEwPyS/jPywgi4IHNwJZoWnI6JIjhHcQtTlYA/hnhod6hylIYM9bR02J857qvlrev5VMtByC46BI1nr9VipKvxw0MJeqC1RbH2fS7iFjLl9CJb1eEdkeFNYdf4w5jp1fCKjRiplP/0jVeGpyiblK3xA5iwZfFJhZdKpJHyx0o="
     on:
       tags: true
       all_branches: true
