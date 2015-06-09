@@ -21,6 +21,7 @@ deploy:
     bucket: octoblu-cdn
     region: us-west-2
     skip_cleanup: true
+    detect_encoding: true
     local-dir: deploy
     upload-dir: js
     on:
