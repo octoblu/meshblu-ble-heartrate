@@ -15,9 +15,9 @@ before_deploy:
   - cp deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js deploy/meshblu-ble-heartrate/$TRAVIS_TAG/meshblu-ble-heartrate.js
 deploy:
   - provider: s3
-    access_key_id: AKIAIT4X4NDGM2WVL6VA
+    access_key_id: AKIAJH2D5IPIRHYJT5IA
     secret_access_key:
-      secure: "f9/kr1VnllDk2VDAeuKt/4PGmw01qi74LPyZkN80VJoU3aIi4dF+ZbXKX00TTJ89MpSMvWdycPpkasRcPDRs58FGtJSFJb4VwJa/tmh/AyfEsRgI/RdpTbt/HMx64km0F/asgktGrE5kdY/FfVkKubqPaZPPpMFFYm/M48mU9ak="
+      secure: "lhWj82rphIlC/pu8g09o4Olckyszk+B6RZjzfKN2ELBbOM9sPYGx/KbVVM/FoSDlbJrgREXdoVmYoJ69BauCcWw0u3flQzm5X6DJbWGEUSlyWGg63q2FB72o2mYCQmm5d0P7lLu4bTxG0+I1TCd0Jn1kM94lUNRhtM7Yf42e7SM="
     bucket: octoblu-cdn
     region: us-west-2
     skip_cleanup: true
