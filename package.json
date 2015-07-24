@@ -1,6 +1,6 @@
 {
   "name": "meshblu-ble-heartrate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "node command.js"
   },
@@ -8,8 +8,8 @@
     "async": "^0.9.0",
     "debug": "^2.1.0",
     "lodash": "^2.4.1",
-    "noble": "^0.3.6",
-    "meshblu": "^1.22.0"
+    "meshblu": "^1.30.0",
+    "noble": "^0.3.6"
   },
   "keywords": [
     "meshblu-connector",
