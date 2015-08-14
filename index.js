@@ -55,7 +55,7 @@ Plugin.prototype.setOptions = function(options){
     heartRate.on('read', function(data){
       var rate = parseHeartRate(data);
       debug('heartRate', rate);
-      self.emit('data', {heartRate: rate});
+      self.emit('message', {devices: ['*'], topic: 'heartRate', payload: {heartRate: rate}});
     });
   });
 };

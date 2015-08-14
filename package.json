@@ -1,6 +1,7 @@
 {
   "name": "meshblu-tickr",
-  "version": "2.0.0",
+  "version": "3.0.0",
+  "main": "connector.js",
   "scripts": {
     "start": "node command.js"
   },
