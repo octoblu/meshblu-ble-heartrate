@@ -9,7 +9,7 @@ before_deploy:
   - npm install ws browserify coffeeify
   - mkdir -p deploy/meshblu-ble-heartrate/latest
   - mkdir -p deploy/meshblu-ble-heartrate/$TRAVIS_TAG
-  - node_modules/.bin/browserify -s Connector connector.js > deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
+  - node_modules/.bin/browserify -t coffeeify -s Connector connector.js > deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
   - gzip deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
   - mv deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js.gz deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
   - cp deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js deploy/meshblu-ble-heartrate/$TRAVIS_TAG/meshblu-ble-heartrate.js

@@ -1,17 +1,26 @@
 {
   "name": "meshblu-ble-heartrate",
-  "version": "2.0.0",
+  "repository": "octoblu/meshblu-ble-heartrate",
+  "version": "2.1.0",
   "main": "connector.js",
   "scripts": {
-    "start": "node command.js"
+    "preinstall": "node -e \"try{require('./skip-install.js')}catch(e){}\"",
+    "start": "node command.js",
+    "test": "exit 0"
   },
   "dependencies": {
-    "async": "^0.9.0",
+    "async": "^1.4.2",
+    "coffee-script": "^1.9.0",
     "debug": "^2.1.0",
-    "lodash": "^2.4.1",
-    "meshblu": "^1.30.0",
-    "noble": "^0.3.6"
+    "lodash": "^3.10.1",
+    "meshblu": "^1.22.0",
+    "noble": "^1.1.0"
   },
+  "bundledDependencies": [
+    "request",
+    "tar",
+    "fstream"
+  ],
   "keywords": [
     "meshblu-connector",
     "gateblu"
