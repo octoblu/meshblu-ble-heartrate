@@ -1,7 +1,7 @@
 {
   "name": "meshblu-ble-heartrate",
   "repository": "octoblu/meshblu-ble-heartrate",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "main": "connector.js",
   "scripts": {
     "preinstall": "node -e \"try{require('./skip-install.js')}catch(e){}\"",
@@ -21,6 +21,12 @@
     "tar",
     "fstream"
   ],
+  "platformDependencies": {
+    "darwin": [],
+    "win32": [],
+    "win64": [],
+    "linux": []
+  },
   "keywords": [
     "meshblu-connector",
     "gateblu"

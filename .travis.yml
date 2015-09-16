@@ -1,38 +1,41 @@
 language: node_js
-sudo: true
 node_js:
 - '0.10'
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq libbluetooth-dev
+- '0.11'
+addons:
+  apt:
+    packages:
+    - libbluetooth-dev
 before_deploy:
-  - npm install ws browserify coffeeify
-  - mkdir -p deploy/meshblu-ble-heartrate/latest
-  - mkdir -p deploy/meshblu-ble-heartrate/$TRAVIS_TAG
-  - node_modules/.bin/browserify -t coffeeify -s Connector connector.js > deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
-  - gzip deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
-  - mv deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js.gz deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
-  - cp deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js deploy/meshblu-ble-heartrate/$TRAVIS_TAG/meshblu-ble-heartrate.js
+- npm install ws browserify coffeeify
+- mkdir -p deploy/meshblu-ble-heartrate/latest
+- mkdir -p deploy/meshblu-ble-heartrate/$TRAVIS_TAG
+- node_modules/.bin/browserify -t coffeeify -s Connector connector.js > deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
+- gzip deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
+- mv deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js.gz deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js
+- cp deploy/meshblu-ble-heartrate/latest/meshblu-ble-heartrate.js deploy/meshblu-ble-heartrate/$TRAVIS_TAG/meshblu-ble-heartrate.js
 deploy:
-  - provider: s3
-    access_key_id: AKIAJH2D5IPIRHYJT5IA
-    secret_access_key:
-      secure: "lhWj82rphIlC/pu8g09o4Olckyszk+B6RZjzfKN2ELBbOM9sPYGx/KbVVM/FoSDlbJrgREXdoVmYoJ69BauCcWw0u3flQzm5X6DJbWGEUSlyWGg63q2FB72o2mYCQmm5d0P7lLu4bTxG0+I1TCd0Jn1kM94lUNRhtM7Yf42e7SM="
-    bucket: octoblu-cdn
-    region: us-west-2
-    skip_cleanup: true
-    detect_encoding: true
-    local-dir: deploy
-    upload-dir: js
-    on:
-      tags: true
-      all_branches: true
-  - provider: npm
-    skip_cleanup: true
-    clean_up: false
-    email: serveradmin@octoblu.com
-    api_key:
-      secure: "TUEEwPyS/jPywgi4IHNwJZoWnI6JIjhHcQtTlYA/hnhod6hylIYM9bR02J857qvlrev5VMtByC46BI1nr9VipKvxw0MJeqC1RbH2fS7iFjLl9CJb1eEdkeFNYdf4w5jp1fCKjRiplP/0jVeGpyiblK3xA5iwZfFJhZdKpJHyx0o="
-    on:
-      tags: true
-      all_branches: true
+- provider: s3
+  access_key_id: AKIAJH2D5IPIRHYJT5IA
+  secret_access_key:
+    secure: lhWj82rphIlC/pu8g09o4Olckyszk+B6RZjzfKN2ELBbOM9sPYGx/KbVVM/FoSDlbJrgREXdoVmYoJ69BauCcWw0u3flQzm5X6DJbWGEUSlyWGg63q2FB72o2mYCQmm5d0P7lLu4bTxG0+I1TCd0Jn1kM94lUNRhtM7Yf42e7SM=
+  bucket: octoblu-cdn
+  region: us-west-2
+  skip_cleanup: true
+  detect_encoding: true
+  local-dir: deploy
+  upload-dir: js
+  on:
+    tags: true
+    all_branches: true
+    node: '0.10'
+- provider: npm
+  skip_cleanup: true
+  clean_up: false
+  email: serveradmin@octoblu.com
+  api_key:
+    secure: "f0nI9J1Jeuu61jEqQLnMYdbrWvrPKa3/G336YJfWpvKg8J7IAJ3XvU/lWHoKVWWWOIfKTVMUjheyqOGlUEvjhlt09/ER3zr41/94iWfgMJirgxDDKcw4EoYuZX7tk9ltt21TF6eyIstihkS2CyOZ0F/pYuHpCn1N4kTosi5rcOE="
+  on:
+    tags: true
+    all_branches: true
+    node: '0.11'
