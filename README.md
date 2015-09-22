@@ -1,5 +1,11 @@
 ## meshblu-ble-heartrate
 
+[![Build Status](https://travis-ci.org/octoblu/meshblu-ble-heartrate.svg?branch=master)](https://travis-ci.org/octoblu/meshblu-ble-heartrate)
+[![Code Climate](https://codeclimate.com/github/octoblu/meshblu-ble-heartrate/badges/gpa.svg)](https://codeclimate.com/github/octoblu/meshblu-ble-heartrate)
+[![Test Coverage](https://codeclimate.com/github/octoblu/meshblu-ble-heartrate/badges/coverage.svg)](https://codeclimate.com/github/octoblu/meshblu-ble-heartrate)
+[![npm version](https://badge.fury.io/js/meshblu-ble-heartrate.svg)](http://badge.fury.io/js/meshblu-ble-heartrate)
+[![Gitter](https://badges.gitter.im/octoblu/help.svg)](https://gitter.im/octoblu/help)
+
 A Meshblu connector for use in Octoblu or with other services.
 
 ### Setup Instructions
